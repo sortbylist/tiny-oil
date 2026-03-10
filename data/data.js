@@ -5,10 +5,10 @@ window.oilPriceData = {
     { "id": "guangzhou", "name": "广州" },
     { "id": "shenzhen", "name": "深圳", "default": true }
   ],
+  "nextAdjust": { "date": "2026-03-24", "days": 15, "prediction": "+0.15" },
   "mockPrices": {
     "beijing": {
       "prices": { "e92": 7.88, "e95": 8.38, "e98": 9.38, "e0": 7.48 },
-      "nextAdjust": { "date": "2026-03-24", "days": 15, "prediction": "+0.15" },
       "history": [
         { "date": "2025-12-09", "e92": 7.73, "e95": 8.23 },
         { "date": "2025-12-24", "e92": 7.78, "e95": 8.28 },
@@ -20,7 +20,6 @@ window.oilPriceData = {
     },
     "shanghai": {
       "prices": { "e92": 7.85, "e95": 8.35, "e98": 9.35, "e0": 7.45 },
-      "nextAdjust": { "date": "2026-03-24", "days": 15, "prediction": "+0.15" },
       "history": [
         { "date": "2025-12-09", "e92": 7.70, "e95": 8.20 },
         { "date": "2025-12-24", "e92": 7.75, "e95": 8.25 },
@@ -32,7 +31,6 @@ window.oilPriceData = {
     },
     "guangzhou": {
       "prices": { "e92": 7.90, "e95": 8.45, "e98": 9.45, "e0": 7.50 },
-      "nextAdjust": { "date": "2026-03-24", "days": 15, "prediction": "+0.15" },
       "history": [
         { "date": "2025-12-09", "e92": 7.75, "e95": 8.30 },
         { "date": "2025-12-24", "e92": 7.80, "e95": 8.35 },
@@ -44,7 +42,6 @@ window.oilPriceData = {
     },
     "shenzhen": {
       "prices": { "e92": 7.85, "e95": 8.35, "e98": 9.35, "e0": 7.45 },
-      "nextAdjust": { "date": "2026-03-24", "days": 15, "prediction": "+0.15" },
       "history": [
         { "date": "2025-12-09", "e92": 7.70, "e95": 8.20 },
         { "date": "2025-12-24", "e92": 7.75, "e95": 8.25 },

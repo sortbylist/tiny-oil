@@ -32,7 +32,7 @@ async function fetchFromAPI(cityId) {
     city: cityId,
     date: getTodayDate(),
     prices: cityData.prices,
-    nextAdjust: cityData.nextAdjust,
+    nextAdjust: window.oilPriceData.nextAdjust,
     history: cityData.history
   };
 

@@ -69,9 +69,14 @@ function renderPrices(data) {
 }
 
 function renderAdjustInfo(data) {
+  const adjustInfo = document.getElementById('adjust-info');
+  if (!data.nextAdjust) {
+    adjustInfo.innerHTML = '';
+    return;
+  }
   const arrow = data.nextAdjust.prediction.startsWith('+') ? '↑' : '↓';
   const className = data.nextAdjust.prediction.startsWith('+') ? 'up' : 'down';
-  document.getElementById('adjust-info').innerHTML = `
+  adjustInfo.innerHTML = `
     <div class="adjust-date">📅 ${data.nextAdjust.date}</div>
     <div class="adjust-days">还有 ${data.nextAdjust.days} 天</div>
     <div class="adjust-prediction ${className}">预计 ${arrow} ${data.nextAdjust.prediction}元/升</div>
