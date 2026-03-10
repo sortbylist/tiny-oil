@@ -9,9 +9,15 @@ function renderChart(history) {
     container.innerHTML = '';
   }
 
-  const timestamps = history.map(item => new Date(item.date).getTime() / 1000);
-  const data92 = history.map(item => item.e92);
-  const data95 = history.map(item => item.e95);
+  // 根据容器宽度动态计算显示的数据点数量
+  const containerWidth = container.offsetWidth || 320;
+  const pointWidth = 70; // 每个数据点约占70px
+  const maxPoints = Math.max(5, Math.min(10, Math.floor(containerWidth / pointWidth)));
+  const displayHistory = history.slice(-maxPoints);
+
+  const timestamps = displayHistory.map(item => new Date(item.date).getTime() / 1000);
+  const data92 = displayHistory.map(item => item.e92);
+  const data95 = displayHistory.map(item => item.e95);
 
   const opts = {
     width: container.offsetWidth || 320,

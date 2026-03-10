@@ -28,12 +28,29 @@ function getCache(key) {
 async function fetchFromAPI(cityId) {
   // 使用 data.js 中的模拟数据
   const cityData = window.oilPriceData.mockPrices[cityId];
+
+  // 处理 nextAdjust：计算剩余天数，过期则不返回
+  let nextAdjust = null;
+  if (window.oilPriceData.nextAdjust) {
+    const today = new Date(getTodayDate());
+    const adjustDate = new Date(window.oilPriceData.nextAdjust.date);
+console.log(adjustDate);
+    const days = Math.ceil((adjustDate - today) / (1000 * 60 * 60 * 24));
+
+    if (days > 0) {
+      nextAdjust = {
+        ...window.oilPriceData.nextAdjust,
+        days
+      };
+    }
+  }
+
   const mockData = {
     city: cityId,
     date: getTodayDate(),
     prices: cityData.prices,
-    nextAdjust: window.oilPriceData.nextAdjust,
-    history: cityData.history
+    nextAdjust,
+    history: cityData.history.slice(-10)
   };
 
   return new Promise(resolve => setTimeout(() => resolve(mockData), 500));
