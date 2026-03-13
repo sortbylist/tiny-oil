@@ -34,7 +34,7 @@ async function fetchFromAPI(cityId) {
   if (window.oilPriceData.nextAdjust) {
     const today = new Date(getTodayDate());
     const adjustDate = new Date(window.oilPriceData.nextAdjust.date);
-console.log(adjustDate);
+
     const days = Math.ceil((adjustDate - today) / (1000 * 60 * 60 * 24));
 
     if (days > 0) {
